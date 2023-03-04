@@ -1,4 +1,4 @@
-chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+browser.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   if (changeInfo.status === "complete") {
     // console.log("Tab updated or reloaded:", tab.url);
     // Do something here, such as sending a message to background.js or content-script.js
@@ -13,7 +13,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
       tab.url.indexOf("search.brave.com") > -1 ||
       tab.url.indexOf("chat.openai.com") > -1
     ) {
-      chrome.tabs
+      browser.tabs
         .sendMessage(tab.id, { message: tab.url })
         .then()
         .catch((err) => {

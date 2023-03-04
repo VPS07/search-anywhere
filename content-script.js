@@ -1,5 +1,5 @@
 //appned search.html to body
-fetch(chrome.runtime.getURL("/search.html"))
+fetch(browser.runtime.getURL("/search.html"))
   .then((r) => r.text())
   .then((html) => {
     const div = document.createElement("section");
@@ -7,7 +7,7 @@ fetch(chrome.runtime.getURL("/search.html"))
     div.classList.add("search__container");
     document.body.appendChild(div);
 
-    chrome.runtime.onMessage.addListener(function (
+    browser.runtime.onMessage.addListener(function (
       message,
       sender,
       sendResponse
