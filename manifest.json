@@ -1,0 +1,47 @@
+{
+  "name": "serach anywhere",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "120": "icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "matches": [
+        "https://www.google.com/*",
+        "https://www.google.co.in/*",
+        "https://www.bing.com/*",
+        "https://duckduckgo.com/*",
+        "https://search.brave.com/*",
+        "https://yandex.com/*",
+        "https://chat.openai.com/*"
+      ],
+      "css": ["styles.css"],
+      "js": ["content-script.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "matches": [
+        "https://www.google.com/*",
+        "https://www.google.co.in/*",
+        "https://www.bing.com/*",
+        "https://duckduckgo.com/*",
+        "https://search.brave.com/*",
+        "https://yandex.com/*",
+        "https://chat.openai.com/*"
+      ],
+      "resources": ["search.html", "/images/*"]
+    }
+  ],
+  "permissions": ["scripting", "tabs", "storage"]
+}
