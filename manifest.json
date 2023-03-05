@@ -9,9 +9,6 @@
   "icons": {
     "120": "icon.png"
   },
-  "background": {
-    "scripts": ["background.js"]
-  },
 
   "content_scripts": [
     {
