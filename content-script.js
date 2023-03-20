@@ -3,7 +3,8 @@ fetch(browser.runtime.getURL("/search.html"))
   .then((r) => r.text())
   .then((html) => {
     const div = document.createElement("section");
-    div.innerHTML = html;
+    const parser = new DOMParser();
+    div.appendChild(parser.parseFromString(html, "text/html").body.firstChild);
     div.classList.add("search__container");
     document.body.appendChild(div);
 
