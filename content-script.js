@@ -19,12 +19,21 @@ fetch(chrome.runtime.getURL("/search.html"))
     const braveSearch = document.getElementById("brave__search");
     const chatgptSearch = document.getElementById("chatgpt__search");
 
-    fetch(chrome.runtime.getURL("/images/")).then((res) => {
-      duckduckgoSearch.querySelector("img").src = res.url + "duckduckgo.png";
-      bingSearch.querySelector("img").src = res.url + "bing.png";
-      googleSearch.querySelector("img").src = res.url + "google.png";
-      braveSearch.querySelector("img").src = res.url + "brave.png";
-      chatgptSearch.querySelector("img").src = res.url + "chatgpt.png";
+    //fetching images from local files of extension
+    fetch(chrome.runtime.getURL("/images/google.png")).then((res) => {
+      googleSearch.querySelector("img").src = res.url;
+    });
+    fetch(chrome.runtime.getURL("/images/bing.png")).then((res) => {
+      bingSearch.querySelector("img").src = res.url;
+    });
+    fetch(chrome.runtime.getURL("/images/duckduckgo.png")).then((res) => {
+      duckduckgoSearch.querySelector("img").src = res.url;
+    });
+    fetch(chrome.runtime.getURL("/images/brave.png")).then((res) => {
+      braveSearch.querySelector("img").src = res.url;
+    });
+    fetch(chrome.runtime.getURL("/images/chatgpt.png")).then((res) => {
+      chatgptSearch.querySelector("img").src = res.url;
     });
 
     const newUrlDuckduckgo =
@@ -44,7 +53,7 @@ fetch(chrome.runtime.getURL("/search.html"))
 
       chatgptSearch.onclick = function cpoyTxt() {
         navigator.clipboard
-          .writeText(query)
+          .writeText("hello copied")
           .then(() => {
             console.log("Text copied to clipboard");
           })
