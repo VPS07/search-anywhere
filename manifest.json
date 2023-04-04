@@ -18,9 +18,7 @@
         "https://www.google.co.in/*",
         "https://www.bing.com/*",
         "https://duckduckgo.com/*",
-        "https://search.brave.com/*",
-        "https://yandex.com/*",
-        "https://chat.openai.com/*"
+        "https://search.brave.com/*"
       ],
       "css": ["styles.css"],
       "js": ["content-script.js"]
@@ -33,12 +31,10 @@
         "https://www.google.co.in/*",
         "https://www.bing.com/*",
         "https://duckduckgo.com/*",
-        "https://search.brave.com/*",
-        "https://yandex.com/*",
-        "https://chat.openai.com/*"
+        "https://search.brave.com/*"
       ],
       "resources": ["search.html", "/images/*"]
     }
   ],
-  "permissions": ["scripting", "tabs", "storage"]
+  "permissions": ["scripting", "tabs", "storage", "clipboardWrite"]
 }

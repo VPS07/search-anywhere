@@ -51,17 +51,6 @@ fetch(chrome.runtime.getURL("/search.html"))
       bingSearch.href = newUrlBing;
       googleSearch.href = newUrlGoogle;
       braveSearch.href = newUrlBrave;
-
-      chatgptSearch.onclick = function cpoyTxt() {
-        navigator.clipboard
-          .writeText("hello copied")
-          .then(() => {
-            console.log("Text copied to clipboard");
-          })
-          .catch((error) => {
-            alert("Failed to copy text: ", error);
-          });
-      };
       chatgptSearch.href = "https://chat.openai.com/";
     }
 
