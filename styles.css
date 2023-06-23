@@ -6,8 +6,8 @@
 
 .circle__container {
   position: relative;
-  width: 43px;
-  height: 43px;
+  width: 40px;
+  height: 40px;
   margin: 0 auto;
   border-radius: 50%;
   background-color: #3a3a3a;
@@ -34,8 +34,8 @@
 
 .circle__up {
   position: absolute;
-  width: 43px;
-  height: 43px;
+  width: 42px;
+  height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,8 +70,8 @@
 
 .circle__down {
   position: absolute;
-  width: 43px;
-  height: 43px;
+  width: 42px;
+  height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -11,14 +11,14 @@ fetch(chrome.runtime.getURL("/search.html"))
     const pageURL = document.location.href;
     const newUrl = new URL(pageURL);
     const params = new URLSearchParams(newUrl.search);
-    const query = params.get("q");
+    const query = params.get("q") || params.get("p") || params.get("query");
 
     // getting all links id
     const duckduckgoSearch = document.getElementById("duckduckgo__search");
     const bingSearch = document.getElementById("bing__search");
     const googleSearch = document.getElementById("google__search");
     const braveSearch = document.getElementById("brave__search");
-    const chatgptSearch = document.getElementById("chatgpt__search");
+    const yahooSearch = document.getElementById("yahoo__search");
 
     //fetching images from local files of extension
     fetch(chrome.runtime.getURL("/images/google.png")).then((res) => {
@@ -33,8 +33,8 @@ fetch(chrome.runtime.getURL("/search.html"))
     fetch(chrome.runtime.getURL("/images/brave.png")).then((res) => {
       braveSearch.querySelector("img").src = res.url;
     });
-    fetch(chrome.runtime.getURL("/images/chatgpt.png")).then((res) => {
-      chatgptSearch.querySelector("img").src = res.url;
+    fetch(chrome.runtime.getURL("/images/yahoo.png")).then((res) => {
+      yahooSearch.querySelector("img").src = res.url;
     });
 
     const newUrlDuckduckgo =
@@ -46,12 +46,15 @@ fetch(chrome.runtime.getURL("/search.html"))
     const newUrlBrave =
       "https://search.brave.com/search?q=" + encodeURIComponent(query);
 
+    const newUrlYahoo =
+      "https://search.yahoo.com/search?p=" + encodeURIComponent(query);
+
     if (query) {
       duckduckgoSearch.href = newUrlDuckduckgo;
       bingSearch.href = newUrlBing;
       googleSearch.href = newUrlGoogle;
       braveSearch.href = newUrlBrave;
-      chatgptSearch.href = "https://chat.openai.com/";
+      yahooSearch.href = newUrlYahoo;
     }
 
     console.log(document.location.href);
