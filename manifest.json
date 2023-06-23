@@ -3,8 +3,7 @@
   "version": "0.0.1",
   "manifest_version": 2,
   "browser_action": {
-    "default_icon": "icon.png",
-    "default_popup": "popup.html"
+    "default_icon": "icon.png"
   },
   "icons": {
     "120": "icon.png"
@@ -24,8 +23,9 @@
         "https://www.bing.com/*",
         "https://duckduckgo.com/*",
         "https://search.brave.com/*",
-        "https://yandex.com/*",
-        "https://chat.openai.com/*"
+        "https://in.search.yahoo.com/*",
+        "https://search.yahoo.com/*",
+        "https://www.yahoo.com/*"
       ],
       "css": ["styles.css"],
       "js": ["content-script.js"]
